@@ -20,38 +20,41 @@ Existing tools usually focus on either coding or document automation. LoopForge 
 
 ## Architecture
 
-```text
-Coordinator Agent
-  Task decomposition and routing
+LoopForge is organized around specialized agents with clear responsibilities.
 
-  Code Agent
-    Read codebase
-    Plan refactor
-    Implement
-    Run lint and tests
-    Self-correct
-
-  Document Agent
-    Generate technical specs
-    Draft usage docs
-    Produce legal-technical briefs
-    Create structured summaries
-
-  Synthesis Agent
-    Merge outputs and finalize deliverables
-```
+<table>
+  <tr><th>Agent</th><th>Role</th><th>Responsibilities</th></tr>
+  <tr>
+    <td>Coordinator Agent</td>
+    <td>Workflow routing</td>
+    <td>Breaks down tasks, assigns work, and coordinates outputs across agents.</td>
+  </tr>
+  <tr>
+    <td>Code Agent</td>
+    <td>Implementation loop</td>
+    <td>Reads the codebase, plans changes, implements code, runs linting and tests, and self-corrects failures.</td>
+  </tr>
+  <tr>
+    <td>Document Agent</td>
+    <td>Documentation generation</td>
+    <td>Creates technical specs, usage docs, legal-technical briefs, and structured summaries.</td>
+  </tr>
+  <tr>
+    <td>Synthesis Agent</td>
+    <td>Final assembly</td>
+    <td>Merges outputs and prepares the final deliverable.</td>
+  </tr>
+</table>
 
 ### Core Loop
 
-```text
-Read context
-Plan changes
-Implement code
-Run lint and tests
-Analyze failures
-Apply targeted fixes
-Verify final result
-```
+1. Read the relevant project context.
+2. Plan the required code changes.
+3. Implement the update.
+4. Run linting and tests.
+5. Analyze any failures.
+6. Apply targeted fixes.
+7. Verify the final result.
 
 The agent runs this loop autonomously. Failures trigger targeted self-correction rather than a full restart.
 
