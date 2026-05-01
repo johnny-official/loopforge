@@ -1,5 +1,5 @@
 """
-DocAgent — reads finalized code and generates technical specs, usage docs,
+DocAgent: reads finalized code and generates technical specs, usage docs,
 and legal-technical summaries.
 """
 

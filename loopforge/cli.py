@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-LoopForge CLI — Agentic closed-loop development pipeline.
+LoopForge CLI: Agentic closed-loop development pipeline.
 """
 
 import argparse
@@ -21,55 +21,55 @@ def parse_args():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  loopforge --mode code --target ./src --task "refactor auth module"
-  loopforge --mode full --target ./src --task "add rate limiting" --doc-output ./docs
-  loopforge --mode doc  --target ./src --output ./docs/spec.md
+  loopforge -mode code -target ./src -task "refactor auth module"
+  loopforge -mode full -target ./src -task "add rate limiting" -doc-output ./docs
+  loopforge -mode doc  -target ./src -doc-output ./docs/spec.md
         """,
     )
 
     parser.add_argument(
-        "--mode",
+        "-mode",
         choices=["code", "doc", "full"],
         required=True,
         help="Pipeline mode: code-only, doc-only, or full (code + docs)",
     )
     parser.add_argument(
-        "--target",
+        "-target",
         type=Path,
         required=True,
         help="Path to codebase directory or file",
     )
     parser.add_argument(
-        "--task",
+        "-task",
         type=str,
         required=True,
         help="Task description for the agent",
     )
     parser.add_argument(
-        "--doc-output",
+        "-doc-output",
         type=Path,
         default=Path("./docs"),
         help="Output directory for generated documentation (default: ./docs)",
     )
     parser.add_argument(
-        "--config",
+        "-config",
         type=Path,
         default=Path("config/models.yaml"),
         help="Path to model config file (default: config/models.yaml)",
     )
     parser.add_argument(
-        "--max-iterations",
+        "-max-iterations",
         type=int,
         default=8,
         help="Max self-correction iterations before surfacing to user (default: 8)",
     )
     parser.add_argument(
-        "--dry-run",
+        "-dry-run",
         action="store_true",
         help="Plan and display steps without executing",
     )
     parser.add_argument(
-        "--verbose",
+        "-verbose",
         action="store_true",
         help="Verbose logging",
     )

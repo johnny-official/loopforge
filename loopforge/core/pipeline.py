@@ -1,5 +1,5 @@
 """
-Pipeline — orchestrates agent execution for code, doc, and full modes.
+Pipeline: orchestrates agent execution for code, doc, and full modes.
 """
 
 from pathlib import Path
@@ -18,9 +18,9 @@ class Pipeline:
     Top-level pipeline orchestrator.
 
     Modes:
-        code  — Run CodeAgent only (closed-loop refactor/implement)
-        doc   — Run DocAgent only (generate docs from existing code)
-        full  — Run Coordinator (CodeAgent + DocAgent in parallel, then Synthesis)
+        code : Run CodeAgent only (closed-loop refactor/implement)
+        doc  : Run DocAgent only (generate docs from existing code)
+        full : Run Coordinator (CodeAgent + DocAgent in parallel, then Synthesis)
     """
 
     def __init__(self, config: dict):

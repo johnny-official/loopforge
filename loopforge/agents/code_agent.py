@@ -1,8 +1,8 @@
 """
-CodeAgent — reads codebase, implements task, runs lint/tests, self-corrects.
+CodeAgent: reads codebase, implements task, runs lint/tests, self-corrects.
 
 Loop:
-    Read context → Plan → Implement → Lint/Test → Self-correct (on failure)
+    Read context then Plan then Implement then Lint/Test then Self-correct (on failure)
     Max iterations configurable (default: 8)
 """
 
@@ -38,7 +38,7 @@ class CodeAgent:
         if self.dry_run:
             return {"status": "dry_run", "plan": plan, "summary": self._format_plan(plan)}
 
-        # Step 3: Closed loop — implement → validate → fix
+        # Step 3: Closed loop: implement then validate then fix
         iteration = 0
         last_error = None
 

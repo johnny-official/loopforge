@@ -1,5 +1,5 @@
 """
-Context — reads codebase files and builds context dict for agents.
+Context: reads codebase files and builds context dict for agents.
 """
 
 from pathlib import Path

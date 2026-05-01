@@ -1,5 +1,5 @@
 """
-Coordinator — decomposes tasks and routes to CodeAgent + DocAgent in parallel,
+Coordinator: decomposes tasks and routes to CodeAgent + DocAgent in parallel,
 then synthesizes results.
 """
 
@@ -29,7 +29,7 @@ class Coordinator:
         code_result = code_agent.run(target=target, task=task)
 
         if code_result["status"] == "failed":
-            logger.error("CodeAgent failed — aborting pipeline.")
+            logger.error("CodeAgent failed: aborting pipeline.")
             return {
                 "status": "failed",
                 "stage": "code",

@@ -1,5 +1,5 @@
 """
-ModelClient — thin abstraction over LLM API backends.
+ModelClient: thin abstraction over LLM API backends.
 Supports: Anthropic Claude, Xiaomi MiMo (OpenAI-compatible endpoint).
 """
 

@@ -1,5 +1,5 @@
 """
-Config loader — reads models.yaml and merges with defaults.
+Config loader: reads models.yaml and merges with defaults.
 """
 
 from pathlib import Path
