@@ -1,0 +1,30 @@
+# LoopForge model configuration
+# Switch backends by changing model names here — no code changes needed.
+#
+# Supported backends:
+#   Anthropic Claude  — set ANTHROPIC_API_KEY env var
+#   Xiaomi MiMo       — set MIMO_API_KEY env var (OpenAI-compatible)
+
+models:
+  # Coordinator handles task decomposition and routing — needs strong reasoning
+  coordinator: claude-sonnet-4-5
+
+  # Code agent runs the tight implement/test/fix loop — high volume, long context
+  # Switch to mimo-v2.5-pro to benchmark cost vs Claude
+  code_agent: claude-sonnet-4-5
+  # code_agent: mimo-v2.5-pro
+
+  # Doc agent generates specs and usage docs — structured output, high volume
+  doc_agent: claude-sonnet-4-5
+  # doc_agent: mimo-v2.5-pro
+
+  # Synthesis runs final quality pass — keep at high-quality model
+  synthesis: claude-sonnet-4-5
+
+# Agent behavior
+max_iterations: 8           # Max self-correction loops before surfacing to user
+max_context_tokens: 180000  # Max tokens per context window
+
+# Test and lint commands (override per-project)
+test_command: pytest
+lint_command: ruff check .
