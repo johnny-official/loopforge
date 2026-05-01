@@ -2,7 +2,7 @@
 
 **Version:** 0.1  
 **Status:** Active Development  
-**Author:** [Your name / handle]  
+**Author:** JOHNNY
 **Last updated:** May 2026
 
 ## 1. Problem Statement
